@@ -1,0 +1,464 @@
+{
+  "data": {
+    "address": "Nuernberger Strasse 65, Berlin",
+    "id": "crowne_plaza_berlin_city_centre",
+    "check_in_time": "15:00:00",
+    "check_out_time": "12:00:00",
+    "star_certificate": null,
+    "star_rating": 4,
+    "description_struct": [
+      {
+        "paragraphs": [
+          "With a stay at Crowne Plaza Berlin City Centre in Berlin (Charlottenburg-Wilmersdorf), you'll be steps from Kurfürstendamm and 4 minutes by foot from Berlin Zoological Garden.  This 4.5-star hotel is 0.2 mi (0.3 km) from Department Store of the West and 0.2 mi (0.4 km) from Europa Center."
+        ],
+        "title": "Property Location"
+      },
+      {
+        "paragraphs": [
+          "Make yourself at home in one of the 423 air-conditioned rooms featuring flat-screen televisions. Complimentary wired and wireless Internet access keeps you connected, and cable programming provides entertainment. Private bathrooms with bathtubs or showers feature complimentary toiletries and hair dryers. Conveniences include safes and desks, and housekeeping is provided daily."
+        ],
+        "title": "Rooms"
+      },
+      {
+        "paragraphs": [
+          "Enjoy a range of recreational amenities, including an indoor pool, a sauna, and a 24-hour fitness center. Additional features at this hotel include complimentary wireless Internet access, concierge services, and gift shops/newsstands."
+        ],
+        "title": "Amenities"
+      },
+      {
+        "paragraphs": [
+          "Grab a bite at Lobby Lounge, one of the hotel's 2 restaurants, or stay in and take advantage of the 24-hour room service. Snacks are also available at the coffee shop/café. Relax with a refreshing drink from the poolside bar or one of the 2 bars/lounges. Buffet breakfasts are available daily from 6:30 AM to 10:30 AM for a fee."
+        ],
+        "title": "Dining"
+      },
+      {
+        "paragraphs": [
+          "Featured amenities include a business center, express check-in, and complimentary newspapers in the lobby. Self parking (subject to charges) is available onsite."
+        ],
+        "title": "Business, Other Amenities"
+      }
+    ],
+    "email": "info@cp-berlin.com",
+    "facts": {
+      "electricity": {
+        "frequency": [
+          50
+        ],
+        "sockets": [
+          "c",
+          "f"
+        ],
+        "voltage": [
+          230
+        ]
+      },
+      "floors_number": 7,
+      "rooms_number": 423,
+      "year_built": 1995,
+      "year_renovated": 2008
+    },
+    "front_desk_time_end": "04:00:00",
+    "front_desk_time_start": "14:00:00",
+    "hotel_chain": "Crowne Plaza Hotels & Resorts",
+    "images": [
+      "https://cdn.ostrovok.ru/t/{size}/content/52/78/5278bb54f9a76c535563658bf67801c695a390f3.jpeg",
+      "https://cdn.ostrovok.ru/t/{size}/content/68/f1/68f1ab7fb24e9cb74cc896f6574e7550beb5b4d7.jpeg",
+      "https://cdn.ostrovok.ru/t/{size}/content/f3/50/f350ccc7d95bbe93d450bb0860066e6edf932826.jpeg",
+      "https://cdn.ostrovok.ru/t/{size}/content/e2/2b/e22bc2ed7344e12380d36f5635daf67247c9a5e6.jpeg",
+      "https://cdn.ostrovok.ru/t/{size}/content/ec/ac/ecacc76b8228b9fc446273f31f5f72917b11d2dc.jpeg",
+      "https://cdn.ostrovok.ru/t/{size}/content/62/7a/627aa9532924d8f6de14daefbc22081c365c988a.jpeg",
+      "https://cdn.ostrovok.ru/t/{size}/content/8c/42/8c42e14961f50e01490bb5626bb2eea9b4b019bf.jpeg",
+      "https://cdn.ostrovok.ru/t/{size}/content/b0/c8/b0c8d0bb2ac3c3ab1652fcde3628deb7128557fb.jpeg",
+      "https://cdn.ostrovok.ru/t/{size}/content/9c/9b/9c9b5d37830d3c243acb9226aade6467d5d57f45.jpeg"
+    ],
+    "is_closed": false,
+    "kind": "Hotel",
+    "latitude": 52.50384,
+    "longitude": 13.340675,
+    "metapolicy_extra_info": "From November 2nd, due to the current situation and Germany-wide regulations, tourist travel will be prohibited till the end of month.",
+    "metapolicy_struct": {
+      "add_fee": [],
+      "children": [],
+      "children_meal": [
+        {
+          "age_end": 0,
+          "age_start": 0,
+          "currency": "EUR",
+          "inclusion": "not_included",
+          "meal_type": "breakfast",
+          "price": "24.00"
+        }
+      ],
+      "deposit": [
+        {
+          "availability": "available",
+          "currency": "EUR",
+          "deposit_type": "unspecified",
+          "payment_type": "unspecified",
+          "price": "80.00",
+          "price_unit": "per_room_per_night",
+          "pricing_method": "fixed"
+        }
+      ],
+      "extra_bed": [
+        {
+          "amount": 0,
+          "currency": "EUR",
+          "inclusion": "not_included",
+          "price": "45.00",
+          "price_unit": "per_guest_per_night"
+        }
+      ],
+      "internet": [],
+      "meal": [
+        {
+          "currency": "EUR",
+          "inclusion": "not_included",
+          "meal_type": "breakfast",
+          "price": "24.00"
+        }
+      ],
+      "no_show": {
+        "availability": "unspecified",
+        "day_period": "unspecified",
+        "time": null
+      },
+      "parking": [
+        {
+          "currency": "EUR",
+          "inclusion": "not_included",
+          "price": "24.00",
+          "price_unit": "per_guest_per_night",
+          "territory_type": "unspecified"
+        }
+      ],
+      "pets": [
+        {
+          "currency": "EUR",
+          "inclusion": "not_included",
+          "pets_type": "unspecified",
+          "price": "30.00",
+          "price_unit": "per_guest_per_stay"
+        }
+      ],
+      "shuttle": [],
+      "visa": {
+        "visa_support": "unspecified"
+      }
+    },
+    "name": "Crowne Plaza Berlin City Centre",
+    "payment_methods": [
+      "visa",
+      "jcb",
+      "mastercard",
+      "american_express",
+      "diners_club"
+    ],
+    "phone": "49-30-210 07 0",
+    "policy_struct": [
+      {
+        "paragraphs": [
+          "Price of an additional breakfast: 24.00 EUR per person. Information about the type of meals included in the price is indicated in the rate details."
+        ],
+        "title": "Meals"
+      },
+      {
+        "paragraphs": [
+          "Fee for an extra bed: 45.00 EUR per night.",
+          "The number of extra beds depends on the room category. You must take a look at the information about the size of the selected room.",
+          "Breakfast for children costs: 24.00 EUR."
+        ],
+        "title": "Children and information about extra beds"
+      },
+      {
+        "paragraphs": [
+          "A deposit of 80.00 EUR per stay will be required at check-in to cover any potential damages."
+        ],
+        "title": "Special living conditions"
+      },
+      {
+        "paragraphs": [
+          "Pets are allowed for an additional fee. Price of accommodation: 30.00 EUR per stay."
+        ],
+        "title": "Pets"
+      },
+      {
+        "paragraphs": [
+          "Chargeable parking available. Cost: 24.00 EUR per day."
+        ],
+        "title": "Parking space"
+      },
+      {
+        "paragraphs": [
+          "From November 2nd, due to the current situation and Germany-wide regulations, tourist travel will be prohibited till the end of month."
+        ],
+        "title": "Extra info"
+      }
+    ],
+    "postal_code": "10787",
+    "region": {
+      "country_code": "DE",
+      "iata": "BER",
+      "id": 536,
+      "name": "Berlin",
+      "type": "City"
+    },
+    "room_groups": [
+      {
+        "images": [],
+        "name": "Other",
+        "name_struct": {
+          "bathroom": null,
+          "bedding_type": null,
+          "main_name": "Other"
+        },
+        "rg_ext": {
+          "bathroom": 0,
+          "bedding": 0,
+          "capacity": 0,
+          "class": 0,
+          "club": 0,
+          "family": 0,
+          "quality": 0,
+          "sex": 0
+        },
+        "room_amenities": [
+          "private-bathroom",
+          "window"
+        ],
+        "room_group_id": 1
+      },
+      {
+        "images": [],
+        "name": "Economy room",
+        "name_struct": {
+          "bathroom": null,
+          "bedding_type": null,
+          "main_name": "Economy room"
+        },
+        "room_amenities": [
+          "private-bathroom",
+          "window"
+        ],
+        "room_group_id": 10
+      },
+      {
+        "images": [
+          "https://cdn.ostrovok.ru/t/{size}/mec/50/a5/50a51ec6b5dea37af769aa9ef5da2c70f87a8660.jpeg",
+          "https://cdn.ostrovok.ru/t/{size}/mec/fd/ce/fdceb1eb011612e4dcfca0fff66d4532162b123a.jpeg"
+        ],
+        "name": "Standard room",
+        "name_struct": {
+          "bathroom": null,
+          "bedding_type": null,
+          "main_name": "Standard room"
+        },
+        "room_amenities": [
+          "private-bathroom",
+          "window"
+        ],
+        "room_group_id": 11
+      },
+      {
+        "images": [
+          "https://cdn.ostrovok.ru/t/{size}/content/10/d8/10d87402c020bcd72aab41c8fdb33dccf95a0cee.jpeg",
+          "https://cdn.ostrovok.ru/t/{size}/content/9f/13/9f13b795e5a5fe0321df4b35458277f3a4e22a76.jpeg"
+        ],
+        "name": "Superior room",
+        "name_struct": {
+          "bathroom": null,
+          "bedding_type": null,
+          "main_name": "Superior room"
+        },
+        "room_amenities": [
+          "private-bathroom",
+          "window"
+        ],
+        "room_group_id": 12
+      },
+      {
+        "images": [],
+        "name": "Premium room",
+        "name_struct": {
+          "bathroom": null,
+          "bedding_type": null,
+          "main_name": "Premium room"
+        },
+        "room_amenities": [
+          "private-bathroom",
+          "window"
+        ],
+        "room_group_id": 13
+      }
+    ],
+    "amenity_groups": [
+      {
+        "amenities": [
+          "ATM",
+          "Shopping on site",
+          "Air conditioning",
+          "Currency exchange",
+          "Heating",
+          "Newspapers",
+          "Ticket assistance",
+          "Gift shop",
+          "Express check-in/check-out",
+          "Tour assistance",
+          "Television in lobby",
+          "Terrace",
+          "Patio",
+          "Radio",
+          "Reception desk"
+        ],
+        "group_name": "General"
+      },
+      {
+        "amenities": [
+          "Non-smoking rooms",
+          "Soundproof rooms",
+          "Room service",
+          "Interconnecting rooms available",
+          "Family room",
+          "Indoor Fireplace",
+          "Cable TV",
+          "TV",
+          "Minibar",
+          "Hairdryer",
+          "Shower/Bathtub",
+          "Bathtub",
+          "Shower",
+          "Wardrobe/Closet",
+          "Bathrobe",
+          "Linens",
+          "Alarm clock",
+          "Slippers",
+          "Safe (in room)",
+          "Toiletries"
+        ],
+        "group_name": "Rooms"
+      },
+      {
+        "amenities": [
+          "Elevator/lift",
+          "Accessibility features",
+          "Upper floors accessible by elevator"
+        ],
+        "group_name": "Accessibility"
+      },
+      {
+        "amenities": [
+          "Iron and board",
+          "Ironing",
+          "Luggage storage",
+          "Laundry",
+          "Safe-deposit box",
+          "Concierge services",
+          "Dry-cleaning",
+          "Shoe shine",
+          "Luggage storage",
+          "Wake-up service",
+          "Telephone",
+          "Iron"
+        ],
+        "group_name": "Room Amenities"
+      },
+      {
+        "amenities": [
+          "Bar",
+          "Coffee/tea for guests",
+          "Diet menu (on request)",
+          "Breakfast",
+          "Breakfast in the room",
+          "Cafe",
+          "Restaurant",
+          "Vending machine",
+          "Kitchen",
+          "Microwave oven",
+          "Poolside bar",
+          "Packed Lunches",
+          "Coffeemaker",
+          "Bottled water",
+          "Kettle"
+        ],
+        "group_name": "Meals"
+      },
+      {
+        "amenities": [
+          "Free Wi-Fi",
+          "Internet access",
+          "In-room internet"
+        ],
+        "group_name": "Internet"
+      },
+      {
+        "amenities": [
+          "Car rental",
+          "Airport transportation"
+        ],
+        "group_name": "Transfer"
+      },
+      {
+        "amenities": [
+          "Parking"
+        ],
+        "group_name": "Parking"
+      },
+      {
+        "amenities": [
+          "Swimming pool",
+          "Indoor Pool",
+          "Beach/pool towels",
+          "Indoor heated swimming pool"
+        ],
+        "group_name": "Pool and beach"
+      },
+      {
+        "amenities": [
+          "Business center",
+          "Event facilities",
+          "Fax and copy machine",
+          "Meeting and presentation facilities",
+          "Conference Hall"
+        ],
+        "group_name": "Business"
+      },
+      {
+        "amenities": [
+          "Cycling",
+          "Golf course",
+          "Fitness facilities",
+          "Gym",
+          "24 - hour gym"
+        ],
+        "group_name": "Sports"
+      },
+      {
+        "amenities": [
+          "Massage",
+          "Beauty services",
+          "Sauna",
+          "Spa"
+        ],
+        "group_name": "Beauty and wellness"
+      },
+      {
+        "amenities": [
+          "Pets allowed"
+        ],
+        "group_name": "Pets"
+      },
+      {
+        "amenities": [
+          "Temperature control for staff",
+          "Extra decontamination measures",
+          "Temperature control for guests",
+          "Additional measures against COVID-19"
+        ],
+        "group_name": "Health and Safety Measures"
+      }
+    ]
+  },
+  "debug": null,
+  "error": null,
+  "status": "ok"
+}
