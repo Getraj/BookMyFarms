@@ -13,9 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -43,6 +41,7 @@ public class RoomGroup {
     private List<String> roomAmenities;
     @JsonProperty("room_group_id")
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer roomGroupId;
 
     @JsonProperty("images")

@@ -35,6 +35,7 @@ import jakarta.persistence.*;
 @Entity
 public class MetapolicyStruct {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
     private String id;
     @JsonProperty("add_fee")

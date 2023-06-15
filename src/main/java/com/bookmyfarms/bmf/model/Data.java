@@ -53,6 +53,7 @@ public class Data {
     private String address;
     @JsonProperty("id")
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     @JsonProperty("check_in_time")
     private String checkInTime;
@@ -62,6 +63,7 @@ public class Data {
     private Integer starRating;
     @JsonProperty("description_struct")
     @OneToMany
+    @JoinColumn(name = "descriptionStruct_id")
     private List<DescriptionStruct> descriptionStruct;
     @JsonProperty("email")
     private String email;

@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,6 +29,7 @@ public class AmenityGroup {
     private String groupName;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     @JsonProperty("group_Id")
     private String groupId;
 
