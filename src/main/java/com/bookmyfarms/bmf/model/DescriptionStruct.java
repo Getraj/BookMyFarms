@@ -10,20 +10,22 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "paragraphs",
     "title"
 })
+@Entity
 public class DescriptionStruct {
 
     @JsonProperty("paragraphs")
     private List<String> paragraphs;
     @JsonProperty("title")
+    @Id
     private String title;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     @JsonProperty("paragraphs")
     public List<String> getParagraphs() {
@@ -43,16 +45,6 @@ public class DescriptionStruct {
     @JsonProperty("title")
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

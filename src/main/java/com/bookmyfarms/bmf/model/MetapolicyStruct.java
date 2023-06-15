@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import jakarta.persistence.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -31,52 +32,67 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "shuttle",
     "visa"
 })
+@Entity
 public class MetapolicyStruct {
-
+    @Id
+    @Column(name = "id", nullable = false)
+    private String id;
     @JsonProperty("add_fee")
-    private List<Object> addFee;
+    private List<String> addFee;
     @JsonProperty("children")
-    private List<Object> children;
+    private List<String> children;
     @JsonProperty("children_meal")
+    @OneToMany
     private List<ChildMeal> childrenMeal;
     @JsonProperty("deposit")
+    @OneToMany
     private List<Deposit> deposit;
     @JsonProperty("extra_bed")
+    @OneToMany
     private List<ExtraBed> extraBed;
     @JsonProperty("internet")
-    private List<Object> internet;
+    private List<String> internet;
     @JsonProperty("meal")
+    @OneToMany
     private List<Meal> meal;
     @JsonProperty("no_show")
+    @OneToOne
     private NoShow noShow;
     @JsonProperty("parking")
+    @OneToMany
     private List<Parking> parking;
     @JsonProperty("pets")
+    @OneToMany
     private List<Pet> pets;
     @JsonProperty("shuttle")
-    private List<Object> shuttle;
+    private List<String> shuttle;
     @JsonProperty("visa")
+    @OneToOne
     private Visa visa;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
     @JsonProperty("add_fee")
-    public List<Object> getAddFee() {
+    public List<String> getAddFee() {
         return addFee;
     }
 
     @JsonProperty("add_fee")
-    public void setAddFee(List<Object> addFee) {
+    public void setAddFee(List<String> addFee) {
         this.addFee = addFee;
     }
 
     @JsonProperty("children")
-    public List<Object> getChildren() {
+    public List<String> getChildren() {
         return children;
     }
 
     @JsonProperty("children")
-    public void setChildren(List<Object> children) {
+    public void setChildren(List<String> children) {
         this.children = children;
     }
 
@@ -111,12 +127,12 @@ public class MetapolicyStruct {
     }
 
     @JsonProperty("internet")
-    public List<Object> getInternet() {
+    public List<String> getInternet() {
         return internet;
     }
 
     @JsonProperty("internet")
-    public void setInternet(List<Object> internet) {
+    public void setInternet(List<String> internet) {
         this.internet = internet;
     }
 
@@ -161,12 +177,12 @@ public class MetapolicyStruct {
     }
 
     @JsonProperty("shuttle")
-    public List<Object> getShuttle() {
+    public List<String> getShuttle() {
         return shuttle;
     }
 
     @JsonProperty("shuttle")
-    public void setShuttle(List<Object> shuttle) {
+    public void setShuttle(List<String> shuttle) {
         this.shuttle = shuttle;
     }
 
@@ -178,16 +194,6 @@ public class MetapolicyStruct {
     @JsonProperty("visa")
     public void setVisa(Visa visa) {
         this.visa = visa;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

@@ -12,6 +12,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import jakarta.persistence.*;
+import org.hibernate.annotations.Generated;
+import org.hibernate.id.factory.spi.GenerationTypeStrategy;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -19,7 +22,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "id",
     "check_in_time",
     "check_out_time",
-    "star_certificate",
     "star_rating",
     "description_struct",
     "email",
@@ -43,25 +45,28 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "room_groups",
     "amenity_groups"
 })
+@Entity
+@Table
 public class Data {
 
     @JsonProperty("address")
     private String address;
     @JsonProperty("id")
+    @Id
     private String id;
     @JsonProperty("check_in_time")
     private String checkInTime;
     @JsonProperty("check_out_time")
     private String checkOutTime;
-    @JsonProperty("star_certificate")
-    private Object starCertificate;
     @JsonProperty("star_rating")
     private Integer starRating;
     @JsonProperty("description_struct")
+    @OneToMany
     private List<DescriptionStruct> descriptionStruct;
     @JsonProperty("email")
     private String email;
     @JsonProperty("facts")
+    @OneToOne
     private Facts facts;
     @JsonProperty("front_desk_time_end")
     private String frontDeskTimeEnd;
@@ -82,6 +87,7 @@ public class Data {
     @JsonProperty("metapolicy_extra_info")
     private String metapolicyExtraInfo;
     @JsonProperty("metapolicy_struct")
+    @OneToOne
     private MetapolicyStruct metapolicyStruct;
     @JsonProperty("name")
     private String name;
@@ -90,17 +96,19 @@ public class Data {
     @JsonProperty("phone")
     private String phone;
     @JsonProperty("policy_struct")
+    @OneToMany
     private List<PolicyStruct> policyStruct;
     @JsonProperty("postal_code")
     private String postalCode;
     @JsonProperty("region")
+    @OneToOne
     private Region region;
     @JsonProperty("room_groups")
+    @OneToMany
     private List<RoomGroup> roomGroups;
     @JsonProperty("amenity_groups")
+    @OneToMany
     private List<AmenityGroup> amenityGroups;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     @JsonProperty("address")
     public String getAddress() {
@@ -140,16 +148,6 @@ public class Data {
     @JsonProperty("check_out_time")
     public void setCheckOutTime(String checkOutTime) {
         this.checkOutTime = checkOutTime;
-    }
-
-    @JsonProperty("star_certificate")
-    public Object getStarCertificate() {
-        return starCertificate;
-    }
-
-    @JsonProperty("star_certificate")
-    public void setStarCertificate(Object starCertificate) {
-        this.starCertificate = starCertificate;
     }
 
     @JsonProperty("star_rating")
@@ -370,16 +368,6 @@ public class Data {
     @JsonProperty("amenity_groups")
     public void setAmenityGroups(List<AmenityGroup> amenityGroups) {
         this.amenityGroups = amenityGroups;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

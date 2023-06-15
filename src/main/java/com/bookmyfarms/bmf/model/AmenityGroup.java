@@ -10,20 +10,33 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "amenities",
     "group_name"
 })
+@Entity
 public class AmenityGroup {
 
     @JsonProperty("amenities")
     private List<String> amenities;
     @JsonProperty("group_name")
     private String groupName;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+
+    @Id
+    @JsonProperty("group_Id")
+    private String groupId;
+
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
 
     @JsonProperty("amenities")
     public List<String> getAmenities() {
@@ -43,16 +56,6 @@ public class AmenityGroup {
     @JsonProperty("group_name")
     public void setGroupName(String groupName) {
         this.groupName = groupName;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

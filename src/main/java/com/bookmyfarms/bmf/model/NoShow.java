@@ -1,6 +1,7 @@
 
 package com.bookmyfarms.bmf.model;
 
+import java.sql.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -9,6 +10,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -16,16 +20,26 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "day_period",
     "time"
 })
+@Entity
 public class NoShow {
+    @Id
+    @Column(name = "id", nullable = false)
+    private String id;
 
     @JsonProperty("availability")
     private String availability;
     @JsonProperty("day_period")
     private String dayPeriod;
     @JsonProperty("time")
-    private Object time;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+    private Date time;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @JsonProperty("availability")
     public String getAvailability() {
@@ -48,23 +62,13 @@ public class NoShow {
     }
 
     @JsonProperty("time")
-    public Object getTime() {
+    public Date getTime() {
         return time;
     }
 
     @JsonProperty("time")
-    public void setTime(Object time) {
+    public void setTime(Date time) {
         this.time = time;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

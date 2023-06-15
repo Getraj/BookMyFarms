@@ -11,6 +11,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -20,9 +24,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "year_built",
     "year_renovated"
 })
+@Entity
 public class Facts {
-
+    @Id
+    @Column(name = "id", nullable = false)
+    private String id;
     @JsonProperty("electricity")
+    @OneToOne
     private Electricity electricity;
     @JsonProperty("floors_number")
     private Integer floorsNumber;
@@ -32,9 +40,13 @@ public class Facts {
     private Integer yearBuilt;
     @JsonProperty("year_renovated")
     private Integer yearRenovated;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
     @JsonProperty("electricity")
     public Electricity getElectricity() {
         return electricity;
@@ -83,16 +95,6 @@ public class Facts {
     @JsonProperty("year_renovated")
     public void setYearRenovated(Integer yearRenovated) {
         this.yearRenovated = yearRenovated;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

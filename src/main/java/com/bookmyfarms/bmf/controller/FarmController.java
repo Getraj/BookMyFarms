@@ -1,10 +1,11 @@
 package com.bookmyfarms.bmf.controller;
 
-import com.bookmyfarms.bmf.model.Farms;
+import com.bookmyfarms.bmf.model.GetAllFarmsResponse;
+import com.bookmyfarms.bmf.model.InsertFarmsRequest;
+import com.bookmyfarms.bmf.service.FarmService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,13 +16,23 @@ public class FarmController {
 
     private final ObjectMapper objectMapper;
 
-    public FarmController(ObjectMapper objectMapper) {
-        this.objectMapper = objectMapper;
-    }
+    private final FarmService service;
 
+    public FarmController(ObjectMapper objectMapper, FarmService service) {
+        this.objectMapper = objectMapper;
+        this.service = service;
+    }
 
     @GetMapping("/listing")
-    public Farms getAllFarms() throws IOException {
-        return objectMapper.readValue(new File("src/main/resources/templates/HotelRegistration.json"), Farms.class);
+    public ResponseEntity<GetAllFarmsResponse> getAllFarms() throws IOException {
+        return ResponseEntity.ok(objectMapper
+                .readValue(new File("src/main/resources/templates/HotelRegistration.json"), GetAllFarmsResponse.class));
     }
+
+    @PostMapping("/listing")
+    public ResponseEntity<InsertFarmsRequest> saveFarms(@RequestBody InsertFarmsRequest request){
+        service.saveFarms(request);
+        return ResponseEntity.ok(request);
+    }
+
 }

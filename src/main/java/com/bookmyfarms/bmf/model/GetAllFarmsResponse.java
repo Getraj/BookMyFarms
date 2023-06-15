@@ -4,7 +4,6 @@ package com.bookmyfarms.bmf.model;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import com.bookmyfarms.bmf.model.Data;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -19,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "error",
     "status"
 })
-public class Farms {
+public class GetAllFarmsResponse {
 
     @JsonProperty("data")
     private Data data;

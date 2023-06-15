@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -18,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "name",
     "type"
 })
+@Entity
 public class Region {
 
     @JsonProperty("country_code")
@@ -25,13 +28,12 @@ public class Region {
     @JsonProperty("iata")
     private String iata;
     @JsonProperty("id")
+    @Id
     private Integer id;
     @JsonProperty("name")
     private String name;
     @JsonProperty("type")
     private String type;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     @JsonProperty("country_code")
     public String getCountryCode() {
@@ -81,16 +83,6 @@ public class Region {
     @JsonProperty("type")
     public void setType(String type) {
         this.type = type;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

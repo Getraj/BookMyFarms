@@ -13,6 +13,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -23,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "room_amenities",
     "room_group_id"
 })
+@Entity
 public class RoomGroup {
 
     @JsonProperty("images")
@@ -30,15 +34,16 @@ public class RoomGroup {
     @JsonProperty("name")
     private String name;
     @JsonProperty("name_struct")
+    @OneToOne
     private NameStruct nameStruct;
     @JsonProperty("rg_ext")
+    @OneToOne
     private RgExt rgExt;
     @JsonProperty("room_amenities")
     private List<String> roomAmenities;
     @JsonProperty("room_group_id")
+    @Id
     private Integer roomGroupId;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     @JsonProperty("images")
     public List<String> getImages() {
@@ -98,16 +103,6 @@ public class RoomGroup {
     @JsonProperty("room_group_id")
     public void setRoomGroupId(Integer roomGroupId) {
         this.roomGroupId = roomGroupId;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

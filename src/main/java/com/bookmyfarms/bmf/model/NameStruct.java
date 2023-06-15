@@ -9,6 +9,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -16,34 +19,44 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "bedding_type",
     "main_name"
 })
+@Entity
 public class NameStruct {
+    @Id
+    @Column(name = "id", nullable = false)
+    private String id;
 
     @JsonProperty("bathroom")
-    private Object bathroom;
+    private String bathroom;
     @JsonProperty("bedding_type")
-    private Object beddingType;
+    private String beddingType;
     @JsonProperty("main_name")
     private String mainName;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @JsonProperty("bathroom")
-    public Object getBathroom() {
+    public String getBathroom() {
         return bathroom;
     }
 
     @JsonProperty("bathroom")
-    public void setBathroom(Object bathroom) {
+    public void setBathroom(String bathroom) {
         this.bathroom = bathroom;
     }
 
     @JsonProperty("bedding_type")
-    public Object getBeddingType() {
+    public String getBeddingType() {
         return beddingType;
     }
 
     @JsonProperty("bedding_type")
-    public void setBeddingType(Object beddingType) {
+    public void setBeddingType(String beddingType) {
         this.beddingType = beddingType;
     }
 
@@ -55,16 +68,6 @@ public class NameStruct {
     @JsonProperty("main_name")
     public void setMainName(String mainName) {
         this.mainName = mainName;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

@@ -9,6 +9,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -21,7 +24,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "quality",
     "sex"
 })
+@Entity
 public class RgExt {
+    @Id
+    @Column(name = "id", nullable = false)
+    private String id;
 
     @JsonProperty("bathroom")
     private Integer bathroom;
@@ -39,8 +46,14 @@ public class RgExt {
     private Integer quality;
     @JsonProperty("sex")
     private Integer sex;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @JsonProperty("bathroom")
     public Integer getBathroom() {
@@ -120,16 +133,6 @@ public class RgExt {
     @JsonProperty("sex")
     public void setSex(Integer sex) {
         this.sex = sex;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

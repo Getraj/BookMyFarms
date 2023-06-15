@@ -9,6 +9,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -19,7 +22,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "meal_type",
     "price"
 })
+@Entity
 public class ChildMeal {
+    @Id
+    @Column(name = "id", nullable = false)
+    private String id;
 
     @JsonProperty("age_end")
     private Integer ageEnd;
@@ -33,8 +40,14 @@ public class ChildMeal {
     private String mealType;
     @JsonProperty("price")
     private String price;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @JsonProperty("age_end")
     public Integer getAgeEnd() {
@@ -94,16 +107,6 @@ public class ChildMeal {
     @JsonProperty("price")
     public void setPrice(String price) {
         this.price = price;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

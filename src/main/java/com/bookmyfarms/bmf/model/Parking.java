@@ -9,6 +9,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -18,7 +21,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "price_unit",
     "territory_type"
 })
+@Entity
 public class Parking {
+    @Id
+    @Column(name = "id", nullable = false)
+    private String id;
 
     @JsonProperty("currency")
     private String currency;
@@ -30,8 +37,14 @@ public class Parking {
     private String priceUnit;
     @JsonProperty("territory_type")
     private String territoryType;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @JsonProperty("currency")
     public String getCurrency() {
@@ -81,16 +94,6 @@ public class Parking {
     @JsonProperty("territory_type")
     public void setTerritoryType(String territoryType) {
         this.territoryType = territoryType;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }
